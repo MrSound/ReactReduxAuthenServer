@@ -11,7 +11,8 @@ module.exports = function (app) {
     // });
     app.get('/', requireAuth, function (req, res) {
         //console.log('Usersssssssssssssssssssss: ', req.user.email);
-        res.json({ hi: 'there', email: req.user.email, user_id: req.user['_id'] });
+        //res.json({ hi: 'there', email: req.user.email, user_id: req.user['_id'] });
+        res.send({ message: 'Super secret code is ABC123' });
     });
 
     app.post('/signin', requireSignin, Authentication.signin);
